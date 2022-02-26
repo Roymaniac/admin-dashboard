@@ -74,4 +74,13 @@ class PageController extends Controller
         return view('pages.upgrade');
     }
 
+     /**
+     * Display user management page
+     *
+     * @return \Illuminate\View\View
+     */
+    public function management()
+    {
+        return view('users.index');
+    }
 }

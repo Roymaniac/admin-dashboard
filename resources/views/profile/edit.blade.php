@@ -13,6 +13,10 @@
                             @method('put')
 
                             @include('alerts.success')
+                            
+                            <div class="form-group"> 
+                                <img class="rounded mx-auto d-block" width="130px" height="130px" src="{{ asset('black') }}/img/emilyz.jpg" alt="avatar" >
+                            </div>
 
                             <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                 <label>{{ __('Name') }}</label>
@@ -25,6 +29,14 @@
                                 <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email address') }}" value="{{ old('email', auth()->user()->email) }}">
                                 @include('alerts.feedback', ['field' => 'email'])
                             </div>
+
+                            <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
+                                <label>{{ __('Email address') }}</label>
+                                <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email address') }}" value="{{ old('email', auth()->user()->email) }}">
+                                @include('alerts.feedback', ['field' => 'email'])
+                            </div>
+
+
                     </div>
                     <div class="card-footer">
                         <button type="submit" class="btn btn-fill btn-primary">{{ __('Save') }}</button>

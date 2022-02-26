@@ -2,10 +2,9 @@
 
 @section('content')
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-10">
         <div class="card">
             <div class="card-header">
-                <h5 class="title">{{ __('Add User') }}</h5>
             </div>
             <form method="post" action="{{ route('user.store') }}" autocomplete="off">
                 <div class="card-body">
@@ -18,7 +17,7 @@
                         <label>{{ __('Name') }}</label>
                         <input type="text" name="name"
                             class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                            placeholder="{{ __('Name') }}" value="{{ old('name', auth()->user()->name) }}">
+                            placeholder="{{ __('Name') }}" value="{{ old('name') }}">
                         @include('alerts.feedback', ['field' => 'name'])
                     </div>
 
@@ -26,7 +25,7 @@
                         <label>{{ __('Email address') }}</label>
                         <input type="email" name="email"
                             class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                            placeholder="{{ __('Email address') }}" value="{{ old('email', auth()->user()->email) }}">
+                            placeholder="{{ __('Email address') }}" value="{{ old('email') }}">
                         @include('alerts.feedback', ['field' => 'email'])
                     </div>
 

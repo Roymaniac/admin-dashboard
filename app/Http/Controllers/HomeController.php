@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Employee;
+
 class HomeController extends Controller
 {
     /**
@@ -19,8 +21,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function index()
+    public function index(Employee $model)
     {
-        return view('dashboard');
+        return view('dashboard', ['employees' => $model->paginate(7)]);
     }
 }
