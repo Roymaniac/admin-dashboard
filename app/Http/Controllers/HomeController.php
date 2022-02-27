@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
+use App\Models\Task;
 
 class HomeController extends Controller
 {
@@ -21,8 +22,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function index(Employee $model)
+    public function index(Employee $model, Task $task)
     {
-        return view('dashboard', ['employees' => $model->paginate(7)]);
+        return view('dashboard', ['employees' => $model->paginate(7)], ['tasks' => $task->paginate()]);
     }
 }

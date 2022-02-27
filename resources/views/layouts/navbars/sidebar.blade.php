@@ -5,7 +5,7 @@
             <a href="#" class="simple-text logo-normal">{{ __('Admin Dashboard') }}</a>
         </div>
         <ul class="nav">
-            <li @if ($pageSlug =='dashboard' ) class="active " @endif>
+            <li @if ($pageSlug=='dashboard' ) class="active " @endif>
                 <a href="{{ route('home') }}">
                     <i class="tim-icons icon-chart-pie-36"></i>
                     <p>{{ __('Dashboard') }}</p>
@@ -35,6 +35,13 @@
                     </ul>
                 </div>
             </li>
+            <li @if ($pageSlug=='tasks' ) class="active " @endif>
+                <a href="{{ route('task.index')  }}">
+                    <i class="tim-icons icon-notes"></i>
+                    <p>{{ __('Task Management') }}</p>
+                </a>
+            </li>
+
             <li @if ($pageSlug=='icons' ) class="active " @endif>
                 <a href="{{ route('pages.icons') }}">
                     <i class="tim-icons icon-atom"></i>
@@ -71,12 +78,6 @@
                     <p>{{ __('RTL Support') }}</p>
                 </a>
             </li>
-            {{-- <li class=" {{ $pageSlug == 'upgrade' ? 'active' : '' }} bg-info">
-                <a href="{{ route('pages.upgrade') }}">
-                    <i class="tim-icons icon-spaceship"></i>
-                    <p>{{ __('Upgrade to PRO') }}</p>
-                </a>
-            </li> --}}
         </ul>
     </div>
 </div>

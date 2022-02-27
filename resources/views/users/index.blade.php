@@ -107,6 +107,13 @@
                         </div>
                     </li>
                     <li>
+                        <a href="{{ route('task.index')  }}">
+                            <i class="tim-icons icon-notes"></i>
+                            <p>{{ __('Task Management') }}</p>
+                        </a>
+                    </li>
+
+                    <li>
                         <a href="{{ route('pages.icons') }}">
                             <i class="tim-icons icon-atom"></i>
                             <p>{{ _('Icons') }}</p>
@@ -310,11 +317,11 @@
                                                         <div
                                                             class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                                             <a class="dropdown-item"
-                                                                href="/user/{{ $user->id }}}/edit">Edit</a>
-                                                            <form method="post" action="/user/{{ $user->id }}"> 
+                                                                href="/user/{{ $user->id }}/edit">Edit</a>
+                                                            <form method="post" action="/user/{{ $user->id }}">
                                                                 @csrf
-                                                                @method('delete') 
-                                                                <a class="dropdown-item">Delete</a>
+                                                                @method('delete')
+                                                                <button class="dropdown-item">Delete</button>
                                                             </form>
 
                                                         </div>
